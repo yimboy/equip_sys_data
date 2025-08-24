@@ -31,7 +31,7 @@ CREATE TABLE `borrow` (
   `imageFile` longtext,
   `statusID` tinyint DEFAULT '0' COMMENT 'สถานะ (0=รอตรวจสอบ,1=อนุมัติ, 2=ไม่อนุมัติ, 3=ส่งคืนสำเร็จ, 4=ส่งคืนไม่สำเร็จ, 5=ขอยกเลิก, 6=ยกเลิก)',
   PRIMARY KEY (`borrowID`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `borrow` (
 
 LOCK TABLES `borrow` WRITE;
 /*!40000 ALTER TABLE `borrow` DISABLE KEYS */;
-INSERT INTO `borrow` VALUES (25,15,'2025-08-04 00:00:00','2025-08-05 00:00:00','2025-08-06 00:00:00','/uploads/f2a3dd136b965ed7b94c8b3b041de20b',3),(26,17,'2025-08-04 00:00:00','2025-08-05 00:00:00','2025-08-08 00:00:00','/uploads/a8002843500cdc556d111518c80c9b08',0);
+INSERT INTO `borrow` VALUES (30,17,'2025-08-18 00:00:00','2025-08-19 00:00:00','2025-08-20 00:00:00','/uploads/51a680430393663194fe4ba9b4ec5831',0),(31,17,'2025-08-18 00:00:00','2025-08-19 00:00:00','2025-08-20 00:00:00','/uploads/e037a0653d4ce393790d48ae34f121f4',6),(32,17,'2025-08-18 00:00:00','2025-08-19 00:00:00','2025-08-20 00:00:00','/uploads/e078bfa1bd94fac900b11406b9298e85',2),(33,17,'2025-08-18 00:00:00','2025-08-19 00:00:00','2025-08-20 00:00:00','/uploads/34132b8b8e981fa07987bff999df9790',2);
 /*!40000 ALTER TABLE `borrow` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `borrowdetail` (
 
 LOCK TABLES `borrowdetail` WRITE;
 /*!40000 ALTER TABLE `borrowdetail` DISABLE KEYS */;
-INSERT INTO `borrowdetail` VALUES (25,11,1,'2025-08-06'),(25,12,1,'2025-08-06'),(26,13,0,'2025-08-08'),(26,14,1,'2025-08-08');
+INSERT INTO `borrowdetail` VALUES (25,11,1,'2025-08-06'),(25,12,1,'2025-08-06'),(26,13,0,'2025-08-08'),(26,14,1,'2025-08-08'),(27,13,0,'2025-08-20'),(27,15,1,'2025-08-20'),(28,16,1,'2025-08-20'),(29,13,1,'2025-08-19'),(30,17,1,'2025-08-20'),(31,13,1,'2025-08-20'),(31,18,1,'2025-08-20'),(32,13,1,'2025-08-20'),(32,18,1,'2025-08-20'),(33,19,1,'2025-08-20');
 /*!40000 ALTER TABLE `borrowdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `bring` (
   `imageFile` longtext,
   `statusID` tinyint DEFAULT '0' COMMENT 'สถานะ (0,รอตรวจสอบ,1=อนุมัติ, 2=ไม่อนุมัติ, 5=ขอยกเลิก, 6=ยกเลิก)',
   PRIMARY KEY (`bringID`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `bring` (
 
 LOCK TABLES `bring` WRITE;
 /*!40000 ALTER TABLE `bring` DISABLE KEYS */;
-INSERT INTO `bring` VALUES (33,17,'2025-08-04 12:12:11','2025-08-06 00:00:00','/uploads/0562647001fa56365f028b4d947986df',1),(34,17,'2025-08-04 12:28:11','2025-08-07 00:00:00','/uploads/d14ce6c98abc9b3d39b3cf577b9305cd',1),(35,17,'2025-08-12 07:59:23','2025-08-12 00:00:00','/uploads/98897ccf8ef9dd82aecf7fc022c32365',1),(36,17,'2025-08-12 10:35:36','2025-08-12 00:00:00','/uploads/17562207e2ad40369f2f34b3b9e0ba92',2);
+INSERT INTO `bring` VALUES (49,17,'2025-08-24 09:31:13','2025-08-25 00:00:00','/uploads/291a96ca96ed0c445cf80c966a3db4be',6),(52,17,'2025-08-24 09:43:22','2025-08-25 00:00:00','/uploads/091edf51037e53e1e9834578df01ec36',6),(53,17,'2025-08-24 09:45:36','2025-08-25 00:00:00','/uploads/69fa08c7575fba62b2c7dcf6f0f658c0',6),(54,17,'2025-08-24 09:46:23','2025-08-25 00:00:00','/uploads/82664535b97dd3bb1d28c178103821ae',1);
 /*!40000 ALTER TABLE `bring` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `bringdetail` (
 
 LOCK TABLES `bringdetail` WRITE;
 /*!40000 ALTER TABLE `bringdetail` DISABLE KEYS */;
-INSERT INTO `bringdetail` VALUES (33,1,20),(33,2,0),(33,3,5),(33,4,7),(34,2,1),(34,4,5),(34,5,0),(35,2,1),(35,3,1),(36,2,1),(36,3,1);
+INSERT INTO `bringdetail` VALUES (49,4,1),(49,5,1),(52,3,1),(52,4,1),(53,3,1),(53,4,1),(54,3,1),(54,4,1);
 /*!40000 ALTER TABLE `bringdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,9 +160,9 @@ CREATE TABLE `equipments` (
   `amount` smallint DEFAULT NULL COMMENT 'จำนวนคงเหลือ',
   `imageFile` varchar(100) DEFAULT NULL COMMENT 'ไฟล์รูปสินค้า',
   `typeID` tinyint unsigned NOT NULL COMMENT 'รหัสประเภทสินค้า',
-  `statusID` tinyint DEFAULT '1' COMMENT 'สถานะ (0 = ชำรุด,1=ใช้งานได้)',
+  `equipstatusID` tinyint DEFAULT '1' COMMENT 'สถานะ (0 = ชำรุด,1=ใช้งานได้)',
   PRIMARY KEY (`equipmentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +171,7 @@ CREATE TABLE `equipments` (
 
 LOCK TABLES `equipments` WRITE;
 /*!40000 ALTER TABLE `equipments` DISABLE KEYS */;
-INSERT INTO `equipments` VALUES (1,'ดินสอ(โหล)',0,NULL,1,NULL),(2,'ปากกา(โหล)',48,NULL,1,NULL),(3,'ยางลบ(โหล)',3,NULL,1,NULL),(4,'ไม้บรรทัด(อัน)',5,NULL,1,NULL),(5,'เทปใส(อัน)',119,NULL,1,NULL),(6,'เครื่องเย็บกระดาษ(เครื่อง)',30,NULL,1,NULL),(7,'ลวดเย็บกระดาษ(กล่อง)',84,NULL,1,NULL),(8,'คลิปดำ(กล่อง)',95,NULL,1,NULL),(9,'กระดาษA4(รีม)',99,NULL,1,NULL),(10,'โน๊ตบุ๊ค ส.001',1,NULL,2,0),(11,'โน๊ตบุ๊ค ส.002',0,NULL,2,1),(12,'โน๊ตบุ๊ค ส.003',0,NULL,2,1),(13,'สายHDMI 1.5 ม.',1,NULL,2,1),(14,'สายHDMI 5 ม.',0,NULL,2,1),(15,'สายHDMI 10 ม.',1,NULL,2,1),(16,'สายHDMI 15 ม.',1,NULL,2,1),(17,'สายHDMI 20 ม.',1,NULL,2,1),(18,'สายHDMI 30 ม.',1,NULL,2,1),(19,'กล้องดิจิทัล',1,NULL,2,1),(20,'กล้องวิดีโอ',1,NULL,2,1),(22,'กรรไกร(อัน)',10,NULL,1,1),(23,'ดินสอ(โหล)',10,NULL,1,1);
+INSERT INTO `equipments` VALUES (3,'ยางลบ(โหล)',10,NULL,1,NULL),(4,'ไม้บรรทัด(อัน)',11,NULL,1,NULL),(5,'เทปใส(อัน)',118,NULL,1,NULL),(6,'เครื่องเย็บกระดาษ(เครื่อง)',30,NULL,1,NULL),(7,'ลวดเย็บกระดาษ(กล่อง)',84,NULL,1,NULL),(8,'คลิปดำ(กล่อง)',95,NULL,1,NULL),(9,'กระดาษA4(รีม)',99,NULL,1,NULL),(10,'โน๊ตบุ๊ค ส.001',1,NULL,2,0),(11,'โน๊ตบุ๊ค ส.002',1,NULL,2,1),(12,'โน๊ตบุ๊ค ส.003',1,NULL,2,1),(13,'สายHDMI 1.5 ม.',1,NULL,2,1),(14,'สายHDMI 5 ม.',0,NULL,2,1),(15,'สายHDMI 10 ม.',0,NULL,2,1),(16,'สายHDMI 15 ม.',0,NULL,2,1),(17,'สายHDMI 20 ม.',0,NULL,2,1),(18,'สายHDMI 30 ม.',0,NULL,2,1),(19,'กล้องดิจิทัล',1,NULL,2,1),(22,'กรรไกร(อัน)',10,NULL,1,1),(27,'กล้องวิดีโอ',2,NULL,2,1),(28,'โน๊ตบุ๊ค ส.004',1,NULL,2,1),(29,'ดินสอ(โหล)',10,NULL,1,1);
 /*!40000 ALTER TABLE `equipments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,6 +197,30 @@ LOCK TABLES `equipmenttype` WRITE;
 /*!40000 ALTER TABLE `equipmenttype` DISABLE KEYS */;
 INSERT INTO `equipmenttype` VALUES (1,'อุปกรณ์สำนักงาน'),(2,'อุปกรณ์โสตฯ');
 /*!40000 ALTER TABLE `equipmenttype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `equipstatus`
+--
+
+DROP TABLE IF EXISTS `equipstatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `equipstatus` (
+  `equipstatusID` tinyint unsigned NOT NULL,
+  `equipstatusName` varchar(45) NOT NULL,
+  PRIMARY KEY (`equipstatusID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `equipstatus`
+--
+
+LOCK TABLES `equipstatus` WRITE;
+/*!40000 ALTER TABLE `equipstatus` DISABLE KEYS */;
+INSERT INTO `equipstatus` VALUES (0,'ชำรุด'),(1,'พร้อมใช้งาน'),(2,'ส่งซ่อม');
+/*!40000 ALTER TABLE `equipstatus` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -243,7 +267,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (0,'รอตรวจสอบ'),(1,'อนุมัติ'),(2,'ไม่อนุมัติ'),(3,'ส่งคืนสำเร็จ'),(4,'ส่งคืนไม่สำเร็จ'),(5,'ขอยกเลิก'),(6,'ยกเลิก');
+INSERT INTO `status` VALUES (0,'กำลังดำเนินการ'),(1,'อนุมัติ'),(2,'ไม่อนุมัติ'),(3,'ส่งคืนสำเร็จ'),(4,'ส่งคืนไม่สำเร็จ'),(5,'ขอยกเลิก'),(6,'ยกเลิก'),(7,'ติดตามอุปกรณ์'),(8,'รอตรวจสอบ');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -289,4 +313,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-12 22:32:12
+-- Dump completed on 2025-08-24 19:16:18
