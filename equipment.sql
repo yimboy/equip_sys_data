@@ -34,7 +34,7 @@ CREATE TABLE `borrow` (
   `approveDate` datetime DEFAULT NULL,
   `statusID` tinyint DEFAULT '0' COMMENT 'สถานะ (0=รอตรวจสอบ,1=อนุมัติ, 2=ไม่อนุมัติ, 3=ส่งคืนสำเร็จ, 4=ส่งคืนไม่สำเร็จ, 5=ขอยกเลิก, 6=ยกเลิก)',
   PRIMARY KEY (`borrowID`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `borrow` (
 
 LOCK TABLES `borrow` WRITE;
 /*!40000 ALTER TABLE `borrow` DISABLE KEYS */;
-INSERT INTO `borrow` VALUES (46,17,'2025-09-15 00:00:00','2025-09-18 00:00:00','2025-09-18 00:00:00','/uploads/97379d8b0a22401e4db2f5c38b92a0de',NULL,20,'2025-09-15 19:57:25',1);
+INSERT INTO `borrow` VALUES (47,17,'2025-09-22 00:00:00','2025-09-24 00:00:00','2025-09-26 00:00:00','/uploads/2ad198e2d4a6b39af08e686a4435fca7','ไม่มีอุปกรณ์ชำรุด',20,'2025-09-22 16:24:37',3),(48,17,'2025-09-22 00:00:00','2025-09-24 00:00:00','2025-09-25 00:00:00','/uploads/d610db9e0b8ba91899d7a7580a5b6e9d','ไม่มีอุปกรณ์ชำรุด\n',20,'2025-09-22 16:31:03',3);
 /*!40000 ALTER TABLE `borrow` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +69,7 @@ CREATE TABLE `borrowdetail` (
 
 LOCK TABLES `borrowdetail` WRITE;
 /*!40000 ALTER TABLE `borrowdetail` DISABLE KEYS */;
-INSERT INTO `borrowdetail` VALUES (42,27,1,'2025-08-29'),(42,28,1,'2025-08-29'),(42,31,3,'2025-08-29'),(43,10,1,'2025-09-11'),(43,12,1,'2025-09-11'),(44,14,1,'2025-09-15'),(44,15,1,'2025-09-15'),(45,14,1,'2025-09-18'),(46,14,1,'2025-09-18'),(46,15,1,'2025-09-18');
+INSERT INTO `borrowdetail` VALUES (47,16,1,'2025-09-26'),(47,17,1,'2025-09-26'),(48,16,1,'2025-09-25');
 /*!40000 ALTER TABLE `borrowdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `bring` (
   `approveDate` datetime DEFAULT NULL,
   `statusID` tinyint DEFAULT '0' COMMENT 'สถานะ (0,รอตรวจสอบ,1=อนุมัติ, 2=ไม่อนุมัติ, 5=ขอยกเลิก, 6=ยกเลิก)',
   PRIMARY KEY (`bringID`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `bring` (
 
 LOCK TABLES `bring` WRITE;
 /*!40000 ALTER TABLE `bring` DISABLE KEYS */;
-INSERT INTO `bring` VALUES (64,17,'2025-09-15 12:43:14','2025-09-15 00:00:00','/uploads/6ed12cd08d7ec14a6cbab7771b29a813',19,'2025-09-15 19:53:32',1);
+INSERT INTO `bring` VALUES (68,17,'2025-09-22 09:16:56','2025-09-22 00:00:00','/uploads/d43ed7526511bd1277f8ea96ecdad72e',19,'2025-09-22 16:22:04',1);
 /*!40000 ALTER TABLE `bring` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `bringdetail` (
 
 LOCK TABLES `bringdetail` WRITE;
 /*!40000 ALTER TABLE `bringdetail` DISABLE KEYS */;
-INSERT INTO `bringdetail` VALUES (57,3,1),(57,4,1),(58,4,1),(58,6,1),(59,3,2),(59,5,5),(60,29,5),(60,30,5),(61,3,1),(61,4,1),(62,30,5),(63,3,1),(63,4,1),(64,3,1),(64,4,1);
+INSERT INTO `bringdetail` VALUES (68,3,2),(68,4,2);
 /*!40000 ALTER TABLE `bringdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,12 +163,12 @@ CREATE TABLE `equipments` (
   `equipmentID` int NOT NULL AUTO_INCREMENT COMMENT 'รหัสอุปกรณ์',
   `equipmentName` varchar(100) DEFAULT NULL COMMENT 'ชื่ออุปกรณ์',
   `amount` smallint DEFAULT NULL COMMENT 'จำนวนคงเหลือ',
-  `unit` varchar(45) DEFAULT NULL,
+  `unitID` tinyint unsigned NOT NULL,
   `imageFile` varchar(100) DEFAULT NULL COMMENT 'ไฟล์รูปสินค้า',
   `typeID` tinyint unsigned NOT NULL COMMENT 'รหัสประเภทสินค้า',
   `equipstatusID` tinyint DEFAULT '1' COMMENT 'สถานะ (0 = ชำรุด,1=ใช้งานได้)',
   PRIMARY KEY (`equipmentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +177,7 @@ CREATE TABLE `equipments` (
 
 LOCK TABLES `equipments` WRITE;
 /*!40000 ALTER TABLE `equipments` DISABLE KEYS */;
-INSERT INTO `equipments` VALUES (3,'ยางลบ',7,'โหล',NULL,1,NULL),(4,'ไม้บรรทัด',8,'อัน',NULL,1,NULL),(5,'เทปใส',113,'อัน',NULL,1,NULL),(6,'เครื่องเย็บกระดาษ',30,'เครื่อง',NULL,1,NULL),(7,'ลวดเย็บกระดาษ',84,'กล่อง',NULL,1,NULL),(8,'คลิปดำ',95,'กล่อง',NULL,1,NULL),(9,'กระดาษA4',99,'รีม',NULL,1,NULL),(10,'โน๊ตบุ๊ค ส.001',0,'เครื่อง',NULL,2,1),(11,'โน๊ตบุ๊ค ส.002',1,'เครื่อง',NULL,2,2),(12,'โน๊ตบุ๊ค ส.003',0,'เครื่อง',NULL,2,1),(13,'สายHDMI 1.5 ม.',0,'เส้น',NULL,2,1),(14,'สายHDMI 5 ม.',0,'เส้น',NULL,2,1),(15,'สายHDMI 10 ม.',0,'เส้น',NULL,2,1),(16,'สายHDMI 15 ม.',2,'เส้น',NULL,2,1),(17,'สายHDMI 20 ม.',3,'เส้น',NULL,2,1),(18,'สายHDMI 30 ม.',2,'เส้น',NULL,2,1),(19,'กล้องดิจิทัล',3,'ตัว',NULL,2,1),(22,'กรรไกร',10,'อัน',NULL,1,1),(27,'กล้องวิดีโอ',2,'ตัว',NULL,2,1),(28,'โน๊ตบุ๊ค ส.004',1,'เครื่อง',NULL,2,1),(29,'ดินสอ',15,'โหล',NULL,1,NULL),(30,'สมุด',5,'โหล',NULL,1,1),(31,'เมาส์ไร้สาย',10,'อัน',NULL,2,1),(34,'ปากกา',10,'ด้าม',NULL,1,1),(35,'โน๊ตบุ๊ค ส.005',1,'เครื่อง',NULL,2,1);
+INSERT INTO `equipments` VALUES (3,'ยางลบ',4,1,NULL,1,NULL),(4,'ไม้บรรทัด',4,2,NULL,1,NULL),(5,'เทปใส',113,2,NULL,1,NULL),(6,'เครื่องเย็บกระดาษ',30,3,NULL,1,NULL),(7,'ลวดเย็บกระดาษ',84,4,NULL,1,NULL),(8,'คลิปดำ',95,4,NULL,1,NULL),(9,'กระดาษA4',99,5,NULL,1,NULL),(10,'โน๊ตบุ๊ค ส.001',0,3,NULL,2,0),(11,'โน๊ตบุ๊ค ส.002',1,3,NULL,2,2),(12,'โน๊ตบุ๊ค ส.003',0,3,NULL,2,1),(13,'สายHDMI 1.5 ม.',0,6,NULL,2,1),(14,'สายHDMI 5 ม.',0,6,NULL,2,1),(15,'สายHDMI 10 ม.',0,6,NULL,2,1),(16,'สายHDMI 15 ม.',2,6,NULL,2,1),(17,'สายHDMI 20 ม.',3,6,NULL,2,1),(18,'สายHDMI 30 ม.',2,6,NULL,2,1),(19,'กล้องดิจิทัล',3,7,NULL,2,1),(22,'กรรไกร',10,2,NULL,1,1),(27,'กล้องวิดีโอ',2,7,NULL,2,1),(28,'โน๊ตบุ๊ค ส.004',1,3,NULL,2,1),(29,'ดินสอ',15,1,NULL,1,NULL),(31,'เมาส์ไร้สาย',10,2,NULL,2,1),(35,'โน๊ตบุ๊ค ส.005',1,3,NULL,2,1),(36,'ปากกา',10,1,NULL,1,1);
 /*!40000 ALTER TABLE `equipments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,6 +278,30 @@ INSERT INTO `status` VALUES (0,'กำลังดำเนินการ'),(1,
 UNLOCK TABLES;
 
 --
+-- Table structure for table `unit`
+--
+
+DROP TABLE IF EXISTS `unit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `unit` (
+  `unitID` tinyint unsigned NOT NULL,
+  `unitName` varchar(45) NOT NULL,
+  PRIMARY KEY (`unitID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `unit`
+--
+
+LOCK TABLES `unit` WRITE;
+/*!40000 ALTER TABLE `unit` DISABLE KEYS */;
+INSERT INTO `unit` VALUES (1,'โหล'),(2,'อัน'),(3,'เครื่อง'),(4,'กล่อง'),(5,'รีม'),(6,'เส้น'),(7,'ตัว'),(8,'ด้าม');
+/*!40000 ALTER TABLE `unit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -319,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-15 20:15:28
+-- Dump completed on 2025-09-22 16:49:55
